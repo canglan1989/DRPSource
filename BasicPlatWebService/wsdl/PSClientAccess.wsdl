@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<wsdl:definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://localhost/" targetNamespace="http://localhost/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://localhost/"/>
+  </wsdl:types>
+  <message name="PSClientAccesFaceRequest">
+    <part name="opmessage" type="xsd:string"/>
+  </message>
+  <message name="PSClientAccesFaceResponse">
+    <part name="PSClientAccesFaceReturn" type="xsd:string"/>
+  </message>
+  <wsdl:portType name="PSClientAccessPortType">
+    <wsdl:operation name="PSClientAccesFace">
+      <wsdl:input message="tns:PSClientAccesFaceRequest"/>
+      <wsdl:output message="tns:PSClientAccesFaceResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <binding name="PSClientAccessBinding" type="tns:PSClientAccessPortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PSClientAccesFace">
+      <soap:operation soapAction="http://10.0.101.4:8080/BasicPlatWebService/service.php?class=PSClientAccess&amp;method=PSClientAccesFace" style="rpc"/>
+      <wsdl:input>
+        <soap:body use="encoded" namespace="http://localhost/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="encoded" namespace="http://localhost/" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </binding>
+  <wsdl:service name="PSClientAccess">
+    <wsdl:port name="PSClientAccessPort" binding="tns:PSClientAccessBinding">
+      <soap:address location="http://10.0.101.4:8080/BasicPlatWebService/service.php?class=PSClientAccess"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

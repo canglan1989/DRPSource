@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions name="Finance" targetNamespace="urn:Finance" xmlns:typens="urn:Finance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:message name="PostMoneyReceivableRequest">
+    <wsdl:part name="frID" type="xsd:int"></wsdl:part>
+    <wsdl:part name="receivableUid" type="xsd:int"></wsdl:part>
+    <wsdl:part name="actMoney" type="xsd:double"></wsdl:part>
+    <wsdl:part name="iBankId" type="xsd:int"></wsdl:part>
+    <wsdl:part name="strBankName" type="xsd:string"></wsdl:part>
+    <wsdl:part name="strRemark" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PostMoneyReceivableResponse">
+    <wsdl:part name="PostMoneyReceivableResponse" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OpenInvoiceRequest">
+    <wsdl:part name="fiiID" type="xsd:int"></wsdl:part>
+    <wsdl:part name="iInvoiceState" type="xsd:int"></wsdl:part>
+    <wsdl:part name="updateUid" type="xsd:int"></wsdl:part>
+    <wsdl:part name="ifReceiveType" type="xsd:int"></wsdl:part>
+    <wsdl:part name="fIssend" type="xsd:int"></wsdl:part>
+    <wsdl:part name="iOpenUids" type="xsd:string"></wsdl:part>
+    <wsdl:part name="strOpenTimes" type="xsd:string"></wsdl:part>
+    <wsdl:part name="iFinancialPlatforms" type="xsd:string"></wsdl:part>
+    <wsdl:part name="strInvoiceNums" type="xsd:string"></wsdl:part>
+    <wsdl:part name="fInvoiceTitles" type="xsd:string"></wsdl:part>
+    <wsdl:part name="strInvoiceMoneys" type="xsd:string"></wsdl:part>
+    <wsdl:part name="strfRemarks" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OpenInvoiceResponse">
+    <wsdl:part name="OpenInvoiceResponse" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OpenReceiptRequest">
+    <wsdl:part name="ifMoneySourceIDs" type="xsd:string"></wsdl:part>
+    <wsdl:part name="iOpenUid" type="xsd:int"></wsdl:part>
+    <wsdl:part name="strOpenTime" type="xsd:string"></wsdl:part>
+    <wsdl:part name="iFinancialPlatform" type="xsd:int"></wsdl:part>
+    <wsdl:part name="strReceiptNum" type="xsd:string"></wsdl:part>
+    <wsdl:part name="fInvoiceTitle" type="xsd:string"></wsdl:part>
+    <wsdl:part name="ifInvoiceApplyMoney" type="xsd:double"></wsdl:part>
+    <wsdl:part name="ifReceiveType" type="xsd:int"></wsdl:part>
+    <wsdl:part name="strfRemark" type="xsd:string"></wsdl:part>
+    <wsdl:part name="fIssend" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OpenReceiptResponse">
+    <wsdl:part name="OpenReceiptResponse" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvoiceBackRequest">
+  	<wsdl:part name="fiiID" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="backUid" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="strRemark" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="InvoiceBackResponse">
+  	<wsdl:part name="InvoiceBackResponse" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PostMoneyBackRequest">
+  	<wsdl:part name="frID" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="backUid" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="backRemark" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PostMoneyBackResponse">
+  	<wsdl:part name="PostMoneyBackResponse" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OpenInvoicesRequest">
+  	<wsdl:part name="fiiIDs" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="iOpenUid" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="strOpenTime" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="iFinancialPlatform" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="strInvoiceNum" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="fInvoiceTitle" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="ifInvoiceApplyMoney" type="xsd:double"></wsdl:part>
+  	<wsdl:part name="ifReceiveType" type="xsd:int"></wsdl:part>
+  	<wsdl:part name="strfRemark" type="xsd:string"></wsdl:part>
+  	<wsdl:part name="fIssend" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="OpenInvoicesResponse">
+  	<wsdl:part name="OpenInvoicesResponse" type="xsd:int"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="ChannelNewAgentRequest">
+  </wsdl:message>
+  <wsdl:message name="ChannelNewAgentResponse">
+    <wsdl:part name="ChannelNewAgentResponse" type="xsd:string"></wsdl:part>
+  </wsdl:message>
+  <portType name="FinancePortType">
+    <documentation>
+      财务接口
+    </documentation>
+    <operation name="PostMoneyConfirm">
+        <documentation>打款确认</documentation>
+      <input message="typens:PostMoneyConfirm"/>
+      <output message="typens:PostMoneyConfirmResponse"/>
+    </operation>
+    <wsdl:operation name="PostMoneyReceivable">
+      <wsdl:documentation>待收(底单入款)</wsdl:documentation>
+      <wsdl:input message="typens:PostMoneyReceivableRequest"></wsdl:input>
+      <wsdl:output message="typens:PostMoneyReceivableResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenInvoice">
+      <wsdl:documentation>开票</wsdl:documentation>
+      <wsdl:input message="typens:OpenInvoiceRequest"></wsdl:input>
+      <wsdl:output message="typens:OpenInvoiceResponse"></wsdl:output>
+        </wsdl:operation>
+    <wsdl:operation name="OpenReceipt">
+      <wsdl:documentation>财务收据</wsdl:documentation>
+      <wsdl:input message="typens:OpenReceiptRequest"></wsdl:input>
+      <wsdl:output message="typens:OpenReceiptResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InvoiceBack">
+    	<wsdl:documentation>发票申单退回操作</wsdl:documentation>
+    	<wsdl:input message="typens:InvoiceBackRequest"></wsdl:input>
+    	<wsdl:output message="typens:InvoiceBackResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PostMoneyBack">
+    	<wsdl:documentation>打款退回</wsdl:documentation>
+    	<wsdl:input message="typens:PostMoneyBackRequest"></wsdl:input>
+    	<wsdl:output message="typens:PostMoneyBackResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OpenInvoices">
+    	<wsdl:documentation>合并开票</wsdl:documentation>
+    	<wsdl:input message="typens:OpenInvoicesRequest"></wsdl:input>
+    	<wsdl:output message="typens:OpenInvoicesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChannelNewAgent">
+    	<wsdl:documentation>本月新开代理商数，按合同个数统计。返回 json，没有记录的时候返回 空。</wsdl:documentation>
+    	<wsdl:input message="typens:ChannelNewAgentRequest"></wsdl:input>
+    	<wsdl:output message="typens:ChannelNewAgentResponse"></wsdl:output>
+    </wsdl:operation>
+  </portType>
+  <message name="PostMoneyConfirm">
+    <part name="frID" type="xsd:int"/>
+    <part name="confirmUid" type="xsd:int"/>
+    <part name="actMoney" type="xsd:double"/>
+    <part name="iBankId" type="xsd:int"/>
+    <wsdl:part name="strBankName" type="xsd:string"></wsdl:part>
+    <wsdl:part name="strRemark" type="xsd:string"></wsdl:part>
+  </message>
+  <message name="PostMoneyConfirmResponse">
+    <part name="PostMoneyConfirmReturn" type="xsd:int"/>
+  </message>
+  <binding name="FinanceBinding" type="typens:FinancePortType">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="PostMoneyConfirm">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="PostMoneyReceivable">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="OpenInvoice">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="OpenReceipt">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="InvoiceBack">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="PostMoneyBack">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="OpenInvoices">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+    <operation name="ChannelNewAgent">
+      <soap:operation soapAction="urn:FinanceAction"/>
+      <input>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </input>
+      <output>
+        <soap:body namespace="urn:Finance" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="FinanceService">
+    <port name="FinancePort" binding="typens:FinanceBinding">
+      <soap:address location="http://drp.dpanshi.com/WebService/Finance.php"/>
+    </port>
+  </service>
+</definitions>

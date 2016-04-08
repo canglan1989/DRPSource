@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions name="AddCus_Service_Net" targetNamespace="urn:AddCus_Service_Net" xmlns:typens="urn:AddCus_Service_Net" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+     <message name="PSClientAccesFace">
+        <part name="opmessage" type="xsd:string"/>
+     </message>
+     <message name="PSClientAccesFaceResponse">
+        <part name="result" type="xsd:string"/>
+     </message> 
+ <portType name="AddCus_Service_NetPortType">
+      <documentation>
+       PHP WebService 接口
+      </documentation>
+      <operation name="PSClientAccesFace">
+           <documentation>
+            DRP添加客户
+           </documentation>
+           <input message="typens:PSClientAccesFace"/>
+           <output message="typens:PSClientAccesFaceResponse"/>
+      </operation>  
+ </portType>
+ <binding name="AddCus_Service_NetBinding" type="typens:AddCus_Service_NetPortType">
+      <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+              <operation name="PSClientAccesFace">
+                   <soap:operation soapAction="urn:AddCus_Service_NetAction"/>
+                   <input>
+                        <soap:body namespace="urn:AddCus_Service_Net" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+                   </input>
+                   <output>
+                        <soap:body namespace="urn:AddCus_Service_Net" use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/"/>
+                   </output>
+              </operation>  
+ </binding>
+ <service name="AddCus_Service_NetService">
+  <port name="AddCus_Service_NetPort" binding="typens:AddCus_Service_NetBinding">
+   <soap:address location="http://drp.com/WebService/AddCus_Service_Net.php"/>
+  </port>
+ </service>
+</definitions>
